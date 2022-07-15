@@ -1,6 +1,9 @@
 <template>
   <div>
-    <h1>HelloWorld</h1>
+    <p>Count : {{ count }}</p>
+    <button type="button" @click="increment">increment</button>
+    <p>cartCount : {{ cartCount }}</p>
+    <p>itemNm : {{ cart[0].product_name }}</p>
   </div>
 </template>
 <script>
@@ -23,13 +26,27 @@ export default {
     _Boolean() {
       return this.$store.state.Boolean;
     },
+    booleanNumber() {
+      return this.$store.state.booleanNumber;
+    },
+    cart() {
+      return this.$store.state.cart;
+    },
+    cartCount() {
+      return this.$store.getters.cartCount;
+    },
   },
   methods: {
     increment() {
-      this.$store.commit("increment");
+      // this.$store.state.count = 100;
+      this.$store.commit("setCount", 200);
+      // this.$store.commit("increment");
     },
     changeBoolean() {
       this.$store.commit("changeBoolean");
+    },
+    changeNumber() {
+      this.$store.commit("changeNumber");
     },
   },
 };

@@ -1,9 +1,12 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div>
+    <nav>
+      <router-link to="/">Home</router-link> |
+      <router-link to="/StoreAccess">스토어 접근</router-link> |
+      <router-link to="/StoreAccess2">스토어 접근2</router-link>
+    </nav>
+    <router-view />
+  </div>
 </template>
 
 <style>

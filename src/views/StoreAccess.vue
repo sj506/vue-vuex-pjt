@@ -1,6 +1,11 @@
 <template>
   <div>
-    <h1>HelloWorld</h1>
+    <p>Count : {{ count }}</p>
+    <button type="button" @click="increment">increment</button>
+    <p>Boolean : {{ _Boolean }}</p>
+    <button type="button" @click="changeBoolean">Boolean</button>
+    <p>0 or 1 : {{ booleanNumber }}</p>
+    <button type="button" @click="changeNumber">0 or 1</button>
   </div>
 </template>
 <script>
@@ -23,6 +28,9 @@ export default {
     _Boolean() {
       return this.$store.state.Boolean;
     },
+    booleanNumber() {
+      return this.$store.state.booleanNumber;
+    },
   },
   methods: {
     increment() {
@@ -30,6 +38,9 @@ export default {
     },
     changeBoolean() {
       this.$store.commit("changeBoolean");
+    },
+    changeNumber() {
+      this.$store.commit("changeNumber");
     },
   },
 };
